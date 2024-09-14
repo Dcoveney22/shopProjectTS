@@ -4,15 +4,19 @@ const { input } = require('@inquirer/prompts')
 welcomeUser()
 const exitWords =["Quit", "q", "Q", "Ends"]
 
+ 
+
 class shopItem {
     itemName: string;
     itemNumber: number;
+    
 
 
-constructor(itemName: string, itemNumber: number) {
-    this.itemName = itemName;
-    this.itemNumber = itemNumber;
+    constructor(itemName: string, itemNumber: number) {
+        this.itemName = itemName;
+        this.itemNumber = itemNumber;
 }
+
 }
 const productArray: shopItem[]= [
     {
@@ -46,7 +50,7 @@ async function getInput(){
         const x = productArray.findIndex(inStock)
 
         if (x <= -1){
-            console.log(`this item isnot available - please reload the program`)
+            console.log(`this item is not available - please reload the program`)
             continue;
         }
 
